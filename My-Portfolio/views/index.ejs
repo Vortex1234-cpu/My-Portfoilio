@@ -1,0 +1,47 @@
+<%- include('partials/header') %>
+
+    <header>
+        <h1>Hi, I'm <%= data.name %>
+        </h1>
+        <p>
+            <%= data.title %>
+        </p>
+    </header>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <img src="/profile.JPG" alt="Profile Photo" style="width: 150px; height: 150px; border-radius: 50%;">
+    </div>
+
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            <%= data.about %>
+        </p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <ul>
+            <% data.projects.forEach(project=> { %>
+                <li>
+                    <strong>
+                        <%= project.name %>:
+                    </strong>
+                    <%= project.description %>
+                </li>
+                <% }); %>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <%= data.email %>
+        </p>
+        <p>
+            <a href="<%= data.github %>" target="_blank">GitHub</a> |
+            <a href="<%= data.linkedin %>" target="_blank">LinkedIn</a>
+        </p>
+    </section>
+
+    <%- include('partials/footer') %>
